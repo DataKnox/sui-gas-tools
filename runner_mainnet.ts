@@ -30,7 +30,7 @@ export const ender = async () => {
     else {
         console.log('Reference Gas Price is incorrect')
         console.log(nrgp)
-        nrgp = nrgp * 0.98
+        nrgp = Math.ceil(nrgp * 0.98)
         console.log(`setting reference gas price to: ${nrgp}`)
         const command: string = `/home/sui/sui/target/debug/sui validator update-gas-price ${nrgp}`
         // loop over each word in command and place each word in an array
